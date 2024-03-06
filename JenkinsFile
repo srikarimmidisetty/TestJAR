@@ -9,7 +9,7 @@ pipeline {
                 git changelog: false, poll: false, url: 'https://github.com/srikarimmidisetty/TestJAR.git'
                 // Run Maven on a Unix agent.
                 
-                sh "mvn install"
+                sh "cd Calci && mvn clean install"
             }
         }
     }
