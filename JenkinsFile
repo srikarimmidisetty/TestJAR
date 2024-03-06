@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git changelog: false, poll: false, url: 'https://github.com/srikarimmidisetty/TestJAR.git'
+                // Run Maven on a Unix agent.
+                
+                sh "mvn install"
+            }
+        }
+    }
+}
